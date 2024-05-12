@@ -56,13 +56,3 @@ Directories (Will be auto generated when mcbeplay.exe first runs):
 	14. If the above steps were done correctly, your server should now be up and running.
 	
 I would suggest at this point using the server.properties file (found in the BDS folder), to tweak the settings of your server so that it's setup how you need it.
-
-# That's it!
-
-But Foxy... What about the instructions on how it all works...
-Erm... I guess you'll have to watch my videos for that ;)
-https://youtube.com/foxynotail
-
-I hope you managed ok. Any issues, then please contact me via my discord. Details can be found on http://foxynotail.com
-
-# Copyright © 2020, FoxyNoTail
