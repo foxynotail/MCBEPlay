@@ -1,0 +1,10 @@
+#include <File.au3>
+#Include <GUIEdit.au3>
+#include <GUIConstantsEx.au3>
+#include <WindowsConstants.au3>
+#include <StaticConstants.au3>
+#include <Constants.au3>
+#Include <ScrollBarConstants.au3>
+#include <Date.au3>
+#include <WinAPIFiles.au3>
+#include <Array.au3>

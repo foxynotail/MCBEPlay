@@ -1,0 +1,102 @@
+# MCPEPlay Options File
+# For more info visit http://foxynotail.com
+# Copyright © 2020, FoxyNoTail
+
+# Unique Server Title for this server i.e. Foxys Server
+server_title=MCBEPlay
+
+# BDS Server File
+server_file=bedrock_server.exe
+
+# Path to BDS server files	
+server_dir=C:\MCBEPlay\BDS
+
+# Path to worlds folder	
+world_dir=C:\MCBEPlay\BDS\worlds
+
+# Path to world save files (backups)		
+save_dir=C:\MCBEPlay\saves
+
+# Path to log files	
+log_dir=C:\MCBEPlay\logs
+
+# Verbose Logging - #TooManyLogs
+verbose_logging=false
+
+# Keep Logs for X number Days
+keep_logs=14
+
+# Keep Saves for X number Days
+keep_saves=2
+
+# Keep Daily Saves for X number of Days (0 = don't keep daily saves)
+keep_daily_saves=5
+
+################# WARNING ####################
+# The AutoSave System should be turned off until Mojang fixes the BDS-2733 bug
+# preventing the MANIFEST and LOG files from being saved while the server is running.
+# Bug Tracker Link: https://bugs.mojang.com/browse/BDS-2733
+#
+# This means that your world will only be properly backed up when the
+# server restarts using the auto restart system.
+# Once this bug is fixed I would recommend setting
+# auto_save to true and the save_interval and backup_intervals to 60 minutes.
+#
+# How this currently works: If auto_save is set to true,
+# the system will run the "save hold" command on the server
+# at the interval set by save_interval.
+# It will also copy the world files to the saves directory (above)
+# during the save process when the backup_interval is reached.
+#
+# So basically, the save_interval determines how often the database
+# is "saved" (not backed up) and the backup_interval determines how
+# often the game makes a backup during the save process.
+#
+# Currently this does not work do to the bug, and the MANIFEST and LOG
+# files fail to copy resulting in errors.
+# This system is only needed in case of a major crash that affects
+# the world database which is extremely unlikely to occur.
+
+# Auto Save System: Saves every x minutes
+auto_save=false
+
+# Auto Save Interval (Minutes)
+save_interval=60
+
+# Auto Backup Interval (Minutes)
+# How often the game makes a full backup (MANIFEST / .log File Copy Bug as of 6/2/20 making backups void)
+backup_interval=60
+
+########################################
+
+# Auto Restart System
+# Options: interval|time
+# Setting auto_restart to "interval" will make the server restart every "restart_interval" hours.
+# Setting it to "time" will make the server restart at the times specified in "restart_times".
+auto_restart=time
+
+# If you would prefer the server to restart at specific intervals, then set the number of hours between restarts.
+# Integer: restart every X hours				
+restart_interval=12
+
+# If you would prefer the server to restart at specific times of day then use the time option and list the times here
+# Comma Separated Times 06:00,12:00,18:00 etc					
+restart_times=00:00,06:00,12:00,18:00
+
+# Keep Alive
+# If true then the system will restart the server if it's not running. Ideal to prevent it staying off after a crash.
+keepalive=false
+
+
+#### THE ROLL BACK SYSTEM IS OUTDATED AND NOT WORKING FULLY. DO NOT USE! ####
+# What should happen if rollback is set to true, is that if the server
+# cannot load the world after a number of attempts, it will copy the 
+# broken world to the saves folder with the prefix "FAILED_" and then 
+# overwrite the server with the most recent successful backup that was taken.
+# This is untested as issues were found with the Mojang BDS bug as noted above.
+
+# Rollback
+# If server cannot start the system will attempt to rollback to a previous save and try again
+# The failed world is backed up in the saves folder prefix FAILED_ before overwriting
+# The rolled back save is prefixed with ROLLBACK_ to identify which save was used
+rollback=false
