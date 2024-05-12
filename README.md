@@ -2,13 +2,10 @@
 Server GUI &amp; Management for Minecraft Bedrock
 
 # MCBEPlay | Foxy's Bedrock Dedicated Server System for Windows 10
-# Last Updated: 14th April 2020
 # Version: 3.5
 # Made for MC Bedrock Edition 1.14+
-# For more info visit http://foxynotail.com
-# Copyright © 2020, FoxyNoTail
 
-Ok, let's get into it...
+
 
 # KNOWN ISSUES #
 ----------------
