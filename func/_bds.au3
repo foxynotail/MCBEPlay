@@ -74,7 +74,10 @@ Func _BDSCheckResponse()
 	  Sleep(300)
 	  $output = _BDSStdOut()
 	  If StringLen($output) > 0 Then
-		 ExitLoop
+		If FileExists($error_file) Then
+			FileDelete($error_file) ;Remove Error Banner if still alive
+		EndIf
+	    ExitLoop
 	  EndIf
 	  If $try > 20 Then
 		 $responsive = False
@@ -253,15 +256,19 @@ EndFunc
 Func _BDSCheckError($data)
    Local $function_name = "Check Error"
    Local $keyword = "ERROR"
+   Local $keyword2 = "minecraft:trial_chambers/chamber/end"
    Local $keylen = StringLen($keyword)
    Local $pos
+   Local $pos2
    $pos = StringInStr($data, $keyword, 2)
-   If $pos > 1 Then
+   $pos2 = StringInStr($data, $keyword2, 2)
+   If $pos > 1 And $pos2 = 0 Then ;Suppress logging jigsaw errors
 	  _log("Error Found in BDS Output: [" & $data & "]", $function_name, True)
-	  _BDSErrorFile("ERROR")
-	  _BDSExit()
+	   _BDSErrorFile("ERROR")
+	  ; _BDSExit() ;No need to reboot on the Jigsaw error
    EndIf
 EndFunc
+
 
 Func _BDSCheckCrash($data)
 
